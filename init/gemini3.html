@@ -784,7 +784,10 @@
         function animate() {
             requestAnimationFrame(animate);
             
-            if (state.isPaused) return;
+            if (state.isPaused) {
+                composer.render();
+                return;
+            }
 
             const delta = clock.getDelta();
             const now = clock.getElapsedTime();

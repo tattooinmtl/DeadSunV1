@@ -852,7 +852,10 @@
             
             requestAnimationFrame(animate);
             
-            if (isPaused) return;
+            if (isPaused) {
+                composer.render();
+                return;
+            }
 
             const delta = clock.getDelta();
             const elapsedTime = clock.getElapsedTime();
